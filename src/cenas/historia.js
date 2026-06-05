@@ -77,29 +77,30 @@ export class CenaHistoria extends Phaser.Scene {
         card.strokeRoundedRect(140, 100, 1000, 600, 20); 
 
         // TÍTULO DA HISTÓRIA
-        this.add.text(640, 200, 'A Missão no Bosque das Neves', {
+        this.add.text(640, 189, 'A Missão no Bosque das Neves', {
             fontFamily: fonte,
             fontSize: '28px',
-            color: '#7CB6E6',
+            color: '#D8EEFF',
             fontStyle: '700'
         }).setOrigin(0.5).setResolution(DPR);
 
         // TEXTO DA HISTÓRIA LÚDICA
         const texto = [
-            'O Bosque das Neves, um refúgio tecnológico isolado no Ártico, vivia em perfeita',
-            'harmonia digital até que uma tempestade implacável atingiu a ilha.',
-            
-            'Os ventos gélidos destruíram a infraestrutura de fibra óptica, mergulhando',
-            'o Bosque na escuridão — sem internet, a comunicação com o mundo cessou.',
-            
-            'Você é o técnico de elite enviado para a missão mais gelada da sua carreira.',
-            'Sua tarefa é reconstruir a rede, conectar os iglus e devolver a',
-            'conectividade ao Bosque das Neves.',
+            'O Bosque das Neves não é apenas mais uma vila no Ártico.',
+            'É o lar de uma comunidade de pinguins super moderna, totalmente',
+            'interconectada por uma rede de fibra óptica de última geração.',
             '',
-            'Na Expedição FTTH O frio é intenso, mas o sinal não pode parar!'
+            'Mas a Grande Nevasca não trouxe apenas frio; trouxe um verdadeiro apagão!',
+            'O vento forte derrubou os postes, o gelo acumulado esmagou as',
+            'caixas de emenda e a neve soterrou o provedor central.',
+            'Sem comunicação, os pinguins estão isolados em seus iglus, os vídeos',
+            'de pescaria não carregam e o tédio ameaça tomar conta da vila.',
+            '',
+            'O barco quebra-gelo só conseguiu deixar você e sua maleta de ferramentas.',
+            'Agora, a conexão de toda a vila está nas suas mãos!'
         ].join('\n');
 
-        this.add.text(640, 380, texto, {
+        this.add.text(640, 430, texto, {
             fontFamily: fonte,
             fontSize: '18px',
             color: '#D8EEFF',

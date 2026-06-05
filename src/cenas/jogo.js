@@ -175,10 +175,11 @@ export class CenaJogo extends Phaser.Scene {
         };
 
         const falasIntro = [
-            'Olá! Bem-vindo à Expedição FTTH! Serei seu guia na missão de conectar essa região.',
-            'Nessa tecnologia, usamos pulsos de luz viajando por fibras de vidro para enviar dados na velocidade da luz!',
-            'Mas sem clientes, não temos rede.',
-            'Sua primeira tarefa: Selecione o Iglu no inventário e espalhe-os pelo mapa para começarmos o projeto!'
+            'Boas-vindas à Expedição FTTH! ',
+            'Eu serei seu guia na missão de reconectar a nossa vila de pinguins.',
+            'Aqui usamos tecnologia óptica: a internet viaja em forma de luz por fibras de vidro mais finas que um fio de cabelo!',
+            'É pura velocidade! Mas, claro, uma rede tão incrível não serve para nada se não chegar até a casa dos moradores.',
+            'Sua primeira missão: abra o inventário, pegue o Iglu e posicione nossos primeiros clientes pelo mapa. Mãos à obra!'
         ];
 
         let passo = 0;
@@ -195,7 +196,7 @@ export class CenaJogo extends Phaser.Scene {
             }
         });
 
-        // INVENTARIO - Botoes de interface da barra inferior
+        // INVENTARIO
         const interfaceInventario = new InventarioUI(this);
 
         interfaceInventario.criar(

@@ -77,34 +77,24 @@ export class CenaTutorial extends Phaser.Scene {
         card.lineStyle(1, 0xffffff, 0.08);
         card.strokeRoundedRect(140, 100, 1000, 600, 20); 
 
-        // TÍTULO DO CONTEÚDO
-        this.add.text(640, // X
-            550, // Y
-            'Aprenda a montar uma rede FTTH do zero', {
-            fontFamily: fonte,
-            fontSize: '20px',
-            color: '#7CB6E6',
-            fontStyle: '700'
-        }).setOrigin(0.5).setResolution(DPR);
-
         // MOLDURA VISUAL DO VÍDEO 
         const moldura = this.add.graphics();
         moldura.fillStyle(0x040d1617, 1); // #040d1617
         moldura.fillRoundedRect(295, 135, 690, 388, 14);
-        moldura.lineStyle(2, 0x22598D, 0.9); // #22598D
+        moldura.lineStyle(2, 0x040d1617, 1); // #22598D
         moldura.strokeRoundedRect(295, 135, 690, 388, 14);
 
         // TEXTO ABAIXO DO VÍDEO
         const texto = [
-            'Dúvidas de como conectar a ilha? Preparamos um vídeo especial onde nós,',
-            'os desenvolvedores, ensinamos o passo a passo da nossa jornada.',
+            'Preparamos um vídeo especial no qual nós, os desenvolvedores,',
+            ' ensinamos o passo a passo de como jogar "Expedição FTTH".',
 
-            'Clique no vídeo acima para assistir ao guia completo no YouTube',
-            'e tornar-se um mestre da fibra óptica!'
+            'Clique no vídeo acima para assistir ao guia completo ',
+            'no YouTube e tornar-se um mestre da fibra óptica!'
         ].join('\n');
 
         this.add.text(640 // X 
-                    , 620 //Y
+                    , 599 //Y
                     , texto, { 
                     fontFamily: fonte,
                     fontSize: '17px',
@@ -144,8 +134,8 @@ export class CenaTutorial extends Phaser.Scene {
             z-index: 10;
             border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 0 40px rgb(34, 89, 141);
-        `;
+            `
+        ;
 
         const iframe = document.createElement('iframe');
         iframe.src = 'https://www.youtube.com/embed/2DKzTCIrw9k?rel=0&modestbranding=1';

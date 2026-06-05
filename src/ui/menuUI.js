@@ -27,9 +27,9 @@ export class MenuUI {
         
         // BARRA SUPERIOR
         const barra = this.cena.add.graphics();
-        barra.fillStyle(0x4a7aa7,1); // #7db1e2
+        barra.fillStyle(0x13538abb, 1); // #7CB6E6
         barra.fillRoundedRect(55, 30, 1170, 50, 25);
-        barra.lineStyle(2, 0xffffff, 0.06);
+        barra.lineStyle(2, 0xffffff,0.09);
         barra.strokeRoundedRect(55, 30, 1170, 50, 25);
 
         const fonte = '"Roboto", sans-serif';
@@ -109,11 +109,12 @@ export class MenuUI {
         // BOTÃO INICIAR
         const iniciarBg = this.cena.add.graphics();
         iniciarBg.fillStyle(0x13538abb, 1);  // #13538abb
-        iniciarBg.fillRoundedRect(510, 375, 260, 50, 25);
+        iniciarBg.fillRoundedRect(510, 400, 260, 50, 25);
+       
         iniciarBg.setAlpha(0.89); 
 
         // Área invisível apenas para detetar o clique
-        const iniciarArea = this.cena.add.rectangle(640, 400, 260, 50, 0xffffff, 0);
+        const iniciarArea = this.cena.add.rectangle(640, 425, 260, 50, 0xffffff, 0);
         iniciarArea.setInteractive({ useHandCursor: true });
 
         iniciarArea.on('pointerdown', () => {
@@ -142,7 +143,8 @@ export class MenuUI {
             });
         });
 
-        this.cena.add.text(640, 400, 'INICIAR AVENTURA', {
+        // 
+        this.cena.add.text(640, 425, 'INICIAR AVENTURA', {
             fontFamily: fonte,
             fontSize: '24px',
             color: '#FFFFFF',

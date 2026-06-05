@@ -22,6 +22,7 @@ export class CenaSobre extends Phaser.Scene {
         });
         const DPR = Math.min(window.devicePixelRatio || 1);
         const fonte = '"Roboto", sans-serif';
+
         // BARRA SUPERIOR
         const barra = this.add.graphics();
         barra.fillStyle(0x7CB6E6, 0.12); // #7CB6E6
@@ -68,7 +69,7 @@ export class CenaSobre extends Phaser.Scene {
 
         // LOGO PEQUENO
         const logo = this.add.image(635, //X
-             300, //Y
+             210, //Y
              'logo');
         logo.setScale(0.18);
 
@@ -81,13 +82,13 @@ export class CenaSobre extends Phaser.Scene {
 
         // TEXTO SOBRE O PROJETO DO TCC
         const texto = [
-            'O "Expedição FTTH" nasce como um projeto de TCC desenvolvido por estudantes',
-            'de Computação com o objetivo de simplificar o aprendizado sobre redes de fibra óptica.',         
+            '"Expedição FTTH" nasce como um projeto de TCC desenvolvido por estudantes de Ciências',
+            'da Computação com o objetivo de simplificar o aprendizado sobre redes de fibra óptica.',         
             'Mais do que um jogo, é uma ferramenta educacional voltada para estudantes do ensino',
             'fundamental, aspirantes a técnicos de provedores de internet e entusiastas da tecnologia.',
-            'Nossa missão é transformar conceitos complexos de infraestrutura em uma',
-            'experiência prática, lúdica e acessível, demonstrando que a tecnologia é a',
-            'ponte que conecta pessoas, mesmo nos lugares mais remotos do mundo.',
+            'Nossa missão é transformar conceitos complexos de infraestrutura em uma experiência',
+            ' prática, lúdica e acessível, demonstrando que a tecnologia é a ponte que',
+            ' conecta pessoas, mesmo nos lugares mais remotos do mundo.',
             '',
             
             'Desenvolvido por: Katherine Maria Carvalho da Silva e Letícia Rodrigues de Sousa.'
