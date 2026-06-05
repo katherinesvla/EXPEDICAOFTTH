@@ -204,7 +204,7 @@ export class CenaJogo extends Phaser.Scene {
                 { nome: 'CEO', chave: 'ceo' },
                 { nome: 'CTO', chave: 'cto' },
                 { nome: 'POP', chave: 'concentrador' },
-                { nome: 'Cabo ASU', chave: 'caboAS' },
+                { nome: 'Cabo AS', chave: 'caboAS' },
                 { nome: 'Cabo Drop', chave: 'caboDrop' },
                 { nome: 'Iglu', chave: 'iglu' },
                 { nome: 'Apagar', chave: 'apagar' }
@@ -246,7 +246,7 @@ export class CenaJogo extends Phaser.Scene {
                         falaEducativa = 'POP (Ponto de Presença)! É o cérebro da rede. Aqui ficam os servidores e a OLT, equipamentos que geram a luz para toda a cidade.';
                         break;
                     case 'CEO':
-                        falaEducativa = 'CEO (Caixa de Emenda). Ela abriga as fusões de fibra. O cabo ASU principal chega nela e se divide em ramais menores para os bairros!';
+                        falaEducativa = 'CEO (Caixa de Emenda). Ela abriga as fusões de fibra. O cabo AS principal chega nela e se divide em ramais menores para os bairros!';
                         break;
                     case 'CTO':
                         falaEducativa = 'CTO (Caixa de Terminação). É a última caixa no poste! Dentro há um Splitter (divisor de luz) que envia o sinal final para até 4 Iglus.';
@@ -254,8 +254,8 @@ export class CenaJogo extends Phaser.Scene {
                     case 'Poste':
                         falaEducativa = 'Poste! Estrutura vital da rua. Nele fixamos as cordoalhas, passamos os cabos e prendemos as nossas caixas CEO e CTO.';
                         break;
-                    case 'Cabo ASU':
-                        falaEducativa = 'Cabo ASU (Rede Primária). Ele é robusto e resistente ao clima. Transporta a luz em alta capacidade do POP até as caixas nas ruas.';
+                    case 'Cabo AS':
+                        falaEducativa = 'Cabo AS (Rede Primária). Ele é robusto e resistente ao clima. Transporta a luz em alta capacidade do POP até as caixas nas ruas.';
                         break;
                     case 'Cabo Drop':
                         falaEducativa = 'Cabo Drop (Rede Secundária). Flexível e leve, é ele que instalamos da CTO, passando pelos postes até entrar no roteador do cliente!';
@@ -433,12 +433,12 @@ export class CenaJogo extends Phaser.Scene {
     }
 
     adicionarCabo(tipo, origem, destino) {
-        const cor = tipo === 'Cabo ASU' ? 0x424242 : 0x118a51; // #424242 ASU // #118a51 Drop
-        const espessura = tipo === 'Cabo ASU' ? 3 : 2;
+        const cor = tipo === 'Cabo AS' ? 0x424242 : 0x118a51; // #424242 AS // #118a51 Drop
+        const espessura = tipo === 'Cabo AS' ? 3 : 2;
         
         // Camadas
-        const profundidadeLinha = tipo === 'Cabo ASU' ? 7 : 5; //7 para ASU, 5 para Drop
-        const profundidadeHitZone = tipo === 'Cabo ASU' ? 7 : 6; //7 para ASU, 6 para Drop
+        const profundidadeLinha = tipo === 'Cabo AS' ? 7 : 5; //7 para AS, 5 para Drop
+        const profundidadeHitZone = tipo === 'Cabo AS' ? 7 : 6; //7 para AS, 6 para Drop
 
         const linha = this.add.line(
             0, //x inicial
@@ -633,9 +633,9 @@ export class CenaJogo extends Phaser.Scene {
                         return;
                     }
                     
-                    // REGRA FTTH: Cabo ASU nao adentra residencia (Iglu), apenas infraestrutura de rua
-                    if (this.ferramentaSelecionada.nome === 'Cabo ASU' && alvoConexao.tipoEstrutura === 'Iglu') {
-                        this.falarPinguim('O Cabo ASU é rígido demais! Ele fica na rua, não entra no iglu!');
+                    // REGRA FTTH: Cabo AS nao adentra residencia (Iglu), apenas infraestrutura de rua
+                    if (this.ferramentaSelecionada.nome === 'Cabo AS' && alvoConexao.tipoEstrutura === 'Iglu') {
+                        this.falarPinguim('O Cabo AS é rígido demais! Ele fica na rua, não entra no iglu!');
                         return;
                     }
 
@@ -654,9 +654,9 @@ export class CenaJogo extends Phaser.Scene {
                         }
                     }
 
-                    if (this.ferramentaSelecionada.nome === 'Cabo ASU') {
+                    if (this.ferramentaSelecionada.nome === 'Cabo AS') {
                         if (origem.tipoEstrutura === 'Iglu' || destino.tipoEstrutura === 'Iglu') {
-                            this.falarPinguim('O Cabo ASU é a rede primária, não pode entrar no iglu!');
+                            this.falarPinguim('O Cabo AS é a rede primária, não pode entrar no iglu!');
                             this.pontoInicialCabo = null;
                             this.graficosPreviewCabo.clear();
                             return;
@@ -672,19 +672,19 @@ export class CenaJogo extends Phaser.Scene {
                             return;
                         }
 
-                        // REGRA FTTH: Sinal e unidirecional. CTO finaliza o fluxo do ASU, impedindo retrocesso a outras CEOs
+                        // REGRA FTTH: Sinal e unidirecional. CTO finaliza o fluxo do AS, impedindo retrocesso a outras CEOs
                         const isCEO = origem.tipoEstrutura === 'CEO' || destino.tipoEstrutura === 'CEO';
                         const isCTO = origem.tipoEstrutura === 'CTO' || destino.tipoEstrutura === 'CTO';
 
                         if (isCEO && isCTO) {
                             const ctoNode = origem.tipoEstrutura === 'CTO' ? origem : destino;
                             
-                            const ctoJaTemASU = this.listaCabos.some(c => 
-                                c.tipo === 'Cabo ASU' && (c.origem === ctoNode || c.destino === ctoNode)
+                            const ctoJaTemAS = this.listaCabos.some(c => 
+                                c.tipo === 'Cabo AS' && (c.origem === ctoNode || c.destino === ctoNode)
                             );
                             
-                            if (ctoJaTemASU) {
-                                this.falarPinguim('Atenção! Uma CTO já conectada à rede não pode enviar o Cabo ASU de volta para outra CEO. O sinal só vai adiante!');
+                            if (ctoJaTemAS) {
+                                this.falarPinguim('Atenção! Uma CTO já conectada à rede não pode enviar o Cabo AS de volta para outra CEO. O sinal só vai adiante!');
                                 this.pontoInicialCabo = null;
                                 this.graficosPreviewCabo.clear();
                                 return;
@@ -810,11 +810,11 @@ export class CenaJogo extends Phaser.Scene {
             };
 
             // Cascata do sinal FTTH
-            const ceosEncontrados = tracarCaminhos([this.popNode], 'Cabo ASU', ['CEO']);
+            const ceosEncontrados = tracarCaminhos([this.popNode], 'Cabo AS', ['CEO']);
             ceosEncontrados.forEach(ceo => ceosAtivos.add(ceo));
 
             if (ceosAtivos.size > 0) {
-                const ctosEncontradas = tracarCaminhos(Array.from(ceosAtivos), 'Cabo ASU', ['CTO']);
+                const ctosEncontradas = tracarCaminhos(Array.from(ceosAtivos), 'Cabo AS', ['CTO']);
                 ctosEncontradas.forEach(cto => ctosAtivas.add(cto));
             }
 
@@ -826,19 +826,19 @@ export class CenaJogo extends Phaser.Scene {
 
         // Renderizacao dos feixes de luz percorrendo o trajeto ativo
         cabosAtivos.forEach((c) => {
-            const dotCor = c.tipo === 'Cabo ASU' ? 0xFFFF00 : 0x118a51;  // #FFFF00 ASU #118a51 Drop 
+            const dotCor = c.tipo === 'Cabo AS' ? 0xFFFF00 : 0x118a51;  // #FFFF00 AS #118a51 Drop 
             const start = c.direcaoSinal.start;
             const end = c.direcaoSinal.end;
 
-            // Camadas das particulas de luz. Luz Primaria (ASU): 13. Luz Secundaria (Drop): 7
-            const profundidadeDot = c.tipo === 'Cabo ASU' ? 13 : 7;
+            // Camadas das particulas de luz. Luz Primaria (AS): 13. Luz Secundaria (Drop): 7
+            const profundidadeDot = c.tipo === 'Cabo AS' ? 13 : 7;
 
             // Tamanho da bolinha de luz: Raio 4
             const dot = this.add.circle(start.x, start.y, 4, dotCor).setDepth(profundidadeDot);
             const dist = Phaser.Math.Distance.Between(start.x, start.y, end.x, end.y);
 
-            // Controle de velocidade das particulas (Menor = Mais rapido). Luz ASU=30, Luz Drop=20
-            const velocidadePulsos = c.tipo === 'Cabo ASU' ? 30 : 20;
+            // Controle de velocidade das particulas (Menor = Mais rapido). Luz AS=30, Luz Drop=20
+            const velocidadePulsos = c.tipo === 'Cabo AS' ? 30 : 20;
 
             const tween = this.tweens.add({
                 targets: dot,
@@ -892,7 +892,7 @@ export class CenaJogo extends Phaser.Scene {
 
         const popLigadoCEO = this.listaCabos.some(
             (c) =>
-                c.tipo === 'Cabo ASU' &&
+                c.tipo === 'Cabo AS' &&
                 (
                     (c.origem.tipoEstrutura === 'POP' && c.destino.tipoEstrutura === 'CEO') ||
                     (c.origem.tipoEstrutura === 'CEO' && c.destino.tipoEstrutura === 'POP') ||
@@ -902,7 +902,7 @@ export class CenaJogo extends Phaser.Scene {
         );
 
         if (!popLigadoCEO) {
-            this.falarPinguim('A CEO precisa de luz! Use o Cabo ASU resistente para ligar a central POP até as suas novas CEOs.');
+            this.falarPinguim('A CEO precisa de luz! Use o Cabo AS resistente para ligar a central POP até as suas novas CEOs.');
             return;
         }
 
@@ -917,7 +917,7 @@ export class CenaJogo extends Phaser.Scene {
 
         const ceoLigadaCTO = this.listaCabos.some(
             (c) =>
-                c.tipo === 'Cabo ASU' &&
+                c.tipo === 'Cabo AS' &&
                 (
                     (c.origem.tipoEstrutura === 'CEO' && c.destino.tipoEstrutura === 'CTO') ||
                     (c.origem.tipoEstrutura === 'CTO' && c.destino.tipoEstrutura === 'CEO') ||
@@ -927,7 +927,7 @@ export class CenaJogo extends Phaser.Scene {
         );
 
         if (!ceoLigadaCTO) {
-            this.falarPinguim('Quase lá! Use o Cabo ASU para ramificar o sinal da CEO até as CTOs perto dos iglus.');
+            this.falarPinguim('Quase lá! Use o Cabo AS para ramificar o sinal da CEO até as CTOs perto dos iglus.');
             return;
         }
 

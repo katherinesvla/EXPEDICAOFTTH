@@ -21,7 +21,7 @@ export class CenaAssets extends Phaser.Scene {
         this.load.image('concentrador', 'assets/concentrador.png'); // concentrador
         
         // NOVOS CABOS
-        this.load.image('caboAS', 'assets/caboAS.png'); // cabo asu
+        this.load.image('caboAS', 'assets/caboAS.png'); // cabo as
         this.load.image('caboDrop', 'assets/caboDrop.png'); // cabo drop
         
         this.load.image('iglu', 'assets/iglu.png'); //iglu
