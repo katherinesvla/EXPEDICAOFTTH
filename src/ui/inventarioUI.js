@@ -58,7 +58,7 @@ export class InventarioUI {
                     iconeSelecionadoAnterior.setScale(1);
                 }
 
-                bgIcone.setStrokeStyle(4, 0xffffff);
+                bgIcone.setStrokeStyle(4, 0xff751f);  // #ff751f
                 bgIcone.setScale(1.1);
                 iconeSelecionadoAnterior = bgIcone;
 

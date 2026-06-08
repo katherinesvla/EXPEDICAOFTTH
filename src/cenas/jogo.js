@@ -117,7 +117,7 @@ export class CenaJogo extends Phaser.Scene {
         });
 
         // PINGUIM MASCOTE
-        this.pinguim = this.add.image(110, //X
+        this.pinguim = this.add.image(99, //X
              650, //Y
               'pinguim_baixo').setDisplaySize(300, 300).setDepth(20); // Tamanho e Profundidade
 
@@ -135,16 +135,18 @@ export class CenaJogo extends Phaser.Scene {
 
         // Balao de fala do mascote. O fundo e desenhado dinamicamente. Profundidade texto: 21, fundo: 20
         this.balaoMascoteBg = this.add.graphics().setDepth(20);
-        this.textoMascote = this.add.text(180, 510, '', {
+        
+        // Texto ajustado para o X 150 (acompanhando o seu novo fundo no 130)
+        this.textoMascote = this.add.text(150, 510, '', { 
             fontFamily: fonte,
             fontSize: '16px',
             color: '#000000',
-            wordWrap: { width: 280 }
+            wordWrap: { width: 260 } // Largura máxima do texto ajustada para caber no balão
         }).setDepth(21).setOrigin(0, 0.5).setResolution(this.DPR).setAlpha(0);
 
         this.balaoMascoteBg.setAlpha(0);
 
-        // Funcao controladora das falas com animacao de fade-in e fade-out (Duracao: 400ms)
+        // fade-in e fade-out ( 400ms)
         this.falarPinguim = (texto, isOcio = false) => {
             if (this.ultimaFalaMascote === texto && !isOcio) return; 
             this.ultimaFalaMascote = texto;
@@ -168,8 +170,8 @@ export class CenaJogo extends Phaser.Scene {
                     const alt = this.textoMascote.height + 30;
                     const yCentro = this.textoMascote.y;
 
-                    // Caixa do balao de fala. Posicao X: 160, Largura fixa: 300, Curvatura: 15
-                    this.balaoMascoteBg.fillRoundedRect(160, yCentro - (alt / 2), 300, alt, 15);
+                    //
+                    this.balaoMascoteBg.fillRoundedRect(130, yCentro - (alt / 2), 300, alt, 15);
 
                     this.tweens.add({
                         targets: [this.textoMascote, this.balaoMascoteBg],

@@ -67,7 +67,7 @@ export class CenaHistoria extends Phaser.Scene {
         });
 
         // TÍTULO DA HISTÓRIA 
-        this.add.text(1180, 189, 'Missão Bosque das Neves', {
+        this.add.text(1248, 160, 'Missão no Bosque das Neves', {
             fontFamily: fonte,
             fontSize: '42px',
             color: '#FFFFFF',
@@ -76,19 +76,21 @@ export class CenaHistoria extends Phaser.Scene {
 
         // TEXTO DA HISTÓRIA 
         const textoDaHistoria = 
-            'O Bosque das Neves não é apenas mais uma vila no Ártico. É o lar de uma comunidade\n' +
-            'de pinguins super moderna, totalmente interconectada por uma rede de fibra óptica de\n' +
-            'última geração.\n\n' +
-            'Mas a Grande Nevasca não trouxe apenas frio; trouxe um verdadeiro apagão!\n' +
-            'O vento forte derrubou os postes, o gelo acumulado esmagou as caixas de emenda e a\n' +
-            'neve soterrou o provedor central.\n\n' +
-            'Sem comunicação, os pinguins estão isolados em seus iglus, os vídeos de pescaria não\n' +
-            'carregam e o tédio ameaça tomar conta da vila.\n' +
+            'O Bosque das Neves não é apenas mais uma vila no Ártico. \n' +
+            'É o lar de uma comunidade de pinguins super moderna, totalmente \n' +
+            'interconectada por uma rede de fibra óptica de última geração. \n' +
+            
+            'Mas a Grande Nevasca não trouxe apenas frio; Trouxe um verdadeiro apagão!\n\n' +
+            'O vento forte derrubou os postes, o gelo acumulado esmagou\n' +
+            'as caixas de emenda e a neve soterrou o provedor central.\n\n' +
+           
+            'Sem comunicação, os pinguins estão isolados em seus iglus, os vídeos \n' +
+            ' de pescaria não carregam e o tédio ameaça tomar conta da vila.\n' +
             'O barco quebra-gelo só conseguiu deixar você e sua maleta de ferramentas.\n' +
             'Agora, a conexão de toda a vila está nas suas mãos!';
 
         // TEXTO
-        this.add.text(1180, 260, textoDaHistoria, {
+        this.add.text(1248, 235, textoDaHistoria, {
             fontFamily: fonte,
             fontSize: '18px',
             color: '#FFFFFF',
@@ -97,8 +99,8 @@ export class CenaHistoria extends Phaser.Scene {
             wordWrap: { width: 700 }
         }).setOrigin(1, 0).setResolution(DPR);
 
-        // MASCOTE
-        const pinguim = this.add.image(280, 400, 'pinguimHistoria'); 
-        pinguim.setScale(1);
+        // MAPA DA REDE CONECTADA 
+        const mapaRede = this.add.image(360, 400, 'mapaHistoria'); 
+        mapaRede.setScale(0.4); 
     }
 }

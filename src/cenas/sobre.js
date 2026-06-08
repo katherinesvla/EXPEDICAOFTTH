@@ -30,26 +30,15 @@ export class CenaSobre extends Phaser.Scene {
         barra.fillStyle(0x7CB6E6, 0.12); // #7CB6E6
         barra.fillRoundedRect(55, 30, 160, 50, 25);
         barra.lineStyle(2, 0xffffff, 0.06);
-        barra.strokeRoundedRect(55, 30, 160, 50, 25);    
-
-        // BOTAO VOLTAR 
-        const voltarArea = this.add.rectangle(155, //X
-            58, //Y
-            200, 40, //Tamanho
-            0xffffff, 0);
-        voltarArea.setDepth(30); // Profundidade
-        voltarArea.setInteractive({ useHandCursor: true });
+        barra.strokeRoundedRect(55, 30, 160, 50, 25);
+        
+        // VOLTAR
+        const voltarArea = this.add.rectangle(135, 56, 140, 36, 0xffffff, 0);
+        voltarArea.setInteractive({ useHandCursor: true }).setDepth(10);
 
         const textoVoltar = this.add.text(135, 56, 'VOLTAR', {
             fontFamily: fonte,
             fontSize: '18px',
-            color: '#FFFFFF',
-            fontStyle: '700'
-        }).setOrigin(0.5).setDepth(10);
-
-        const textoVoltar = this.add.text(135, 56, 'VOLTAR', {
-            fontFamily: fonte,
-            fontSize: '16px',
             color: '#FFFFFF',
             fontStyle: '700'
         }).setOrigin(0.5).setDepth(10);
@@ -74,7 +63,7 @@ export class CenaSobre extends Phaser.Scene {
         });
 
         // TÍTULO DA PÁGINA
-        this.add.text(90, 159, 'SOBRE O JOGO', {
+        this.add.text(60, 160, 'SOBRE O JOGO', {
             fontFamily: fonte,
             fontSize: '42px',
             color: '#FFFFFF',
@@ -87,7 +76,7 @@ export class CenaSobre extends Phaser.Scene {
             'Mais do que um jogo, é uma ferramenta educacional voltada para estudantes do ensino fundamental, aspirantes a técnicos de provedores de internet e entusiastas da tecnologia.\n'+
             'Nossa missão é transformar conceitos complexos de infraestrutura em uma experiência prática, lúdica e acessível, demonstrando que a tecnologia é a ponte que conecta pessoas, mesmo nos lugares mais remotos do mundo.';
 
-        this.add.text(90, 220, textoDaHistoria, { //y maior mais baixo
+        this.add.text(60, 220, textoDaHistoria, { //y maior mais baixo
             fontFamily: fonte,
             fontSize: '18px',
             color: '#FFFFFF',
@@ -97,7 +86,7 @@ export class CenaSobre extends Phaser.Scene {
         }).setOrigin(0, 0).setResolution(DPR);
 
         // CRÉDITOS 
-        this.add.text(90, 498, 'Desenvolvido por:', { //y menor mais alto
+        this.add.text(60, 498, 'Desenvolvido por:', { //y menor mais alto
             fontFamily: fonte,
             fontSize: '18px',
             color: '#7CB6E6', // Cor azulada igual ao mockup
@@ -105,7 +94,7 @@ export class CenaSobre extends Phaser.Scene {
         }).setOrigin(0, 0).setResolution(DPR);
 
         // CRÉDITOS 
-        this.add.text(90, 524, 'Katherine Maria Carvalho da Silva\nLetícia Rodrigues de Sousa', {
+        this.add.text(60, 524, 'Katherine Maria Carvalho da Silva\nLetícia Rodrigues de Sousa', {
             fontFamily: fonte,
             fontSize: '18px',
             color: '#FFFFFF',

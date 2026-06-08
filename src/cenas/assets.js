@@ -16,7 +16,7 @@ export class CenaAssets extends Phaser.Scene {
         
         // SOBRE
         this.load.image('pinguimSobre','assets/pinguimsobre.png');
-        this.load.image('pinguimHistoria','assets/pinguimhistoria.png');
+        this.load.image('mapaHistoria','assets/mapaHistoria.png');
         // JOGO
         this.load.image('poste', 'assets/poste.png'); // poste
         this.load.image('ceo', 'assets/ceo.png'); // ceo

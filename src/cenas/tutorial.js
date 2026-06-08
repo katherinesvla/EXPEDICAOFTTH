@@ -30,26 +30,16 @@ export class CenaTutorial extends Phaser.Scene {
         barra.fillStyle(0x7CB6E6, 0.12); // #7CB6E6
         barra.fillRoundedRect(55, 30, 160, 50, 25);
         barra.lineStyle(2, 0xffffff, 0.06);
-        barra.strokeRoundedRect(55, 30, 160, 50, 25);    
+        barra.strokeRoundedRect(55, 30, 160, 50, 25);
 
-        // BOTAO VOLTAR 
-        const voltarArea = this.add.rectangle(155, //X
-            58, //Y
-            200, 40, //Tamanho
-            0xffffff, 0);
-        voltarArea.setDepth(30); // Profundidade
-        voltarArea.setInteractive({ useHandCursor: true });
+
+        // VOLTAR
+        const voltarArea = this.add.rectangle(135, 56, 140, 36, 0xffffff, 0);
+        voltarArea.setInteractive({ useHandCursor: true }).setDepth(10);
 
         const textoVoltar = this.add.text(135, 56, 'VOLTAR', {
             fontFamily: fonte,
             fontSize: '18px',
-            color: '#FFFFFF',
-            fontStyle: '700'
-        }).setOrigin(0.5).setDepth(10);
-
-        const textoVoltar = this.add.text(135, 56, 'VOLTAR', {
-            fontFamily: fonte,
-            fontSize: '16px',
             color: '#FFFFFF',
             fontStyle: '700'
         }).setOrigin(0.5).setDepth(10);
