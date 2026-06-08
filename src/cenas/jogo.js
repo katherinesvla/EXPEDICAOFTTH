@@ -27,7 +27,7 @@ export class CenaJogo extends Phaser.Scene {
         const fonte = '"Roboto", sans-serif';
         // Cor no fundo do mapa
         document.body.style.backgroundImage = "none";
-        document.body.style.backgroundColor = "#0E2238";
+        document.body.style.backgroundColor = "#2B5A84";
 
         // Integracao com o botao Voltar nativo do navegador
         window.history.pushState({ cena: this.scene.key }, '');
@@ -81,8 +81,14 @@ export class CenaJogo extends Phaser.Scene {
         this.graficosPreviewCabo = this.add.graphics();
         this.graficosPreviewCabo.setDepth(6);
 
+        // BARRA SUPERIOR
+        const barra = this.add.graphics();
+        barra.fillStyle(0x7CB6E6, 0.12); // #7CB6E6
+        barra.fillRoundedRect(55, 30, 160, 50, 25);
+        barra.lineStyle(2, 0xffffff, 0.06);
+        barra.strokeRoundedRect(55, 30, 160, 50, 25);    
+
         // BOTAO VOLTAR 
-        
         const voltarArea = this.add.rectangle(155, //X
             58, //Y
             200, 40, //Tamanho
@@ -90,12 +96,12 @@ export class CenaJogo extends Phaser.Scene {
         voltarArea.setDepth(30); // Profundidade
         voltarArea.setInteractive({ useHandCursor: true });
 
-        const textoVoltar = this.add.text(155, 58, 'VOLTAR', {
+        const textoVoltar = this.add.text(135, 56, 'VOLTAR', {
             fontFamily: fonte,
-            fontSize: '22px',
-            color: '#FFFFFF', 
+            fontSize: '18px',
+            color: '#FFFFFF',
             fontStyle: '700'
-        }).setOrigin(0.5).setDepth(30).setShadow(1, 1, 'rgba(0, 0, 0, 0.4)', 2).setResolution(this.DPR);
+        }).setOrigin(0.5).setDepth(10);
 
         voltarArea.on('pointerover', () => { textoVoltar.setAlpha(0.7); });
         voltarArea.on('pointerout', () => { textoVoltar.setAlpha(1); });

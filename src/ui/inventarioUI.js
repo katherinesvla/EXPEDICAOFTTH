@@ -19,7 +19,7 @@ export class InventarioUI {
         ferramentas.forEach((ferramenta, index) => {
             const x = startX + (index * espacamento);
 
-            const bgIcone = this.scene.add.circle(x, yIcone, 42, 0x7CB6E6, 0.12).setDepth(20); // #7CB6E6
+            const bgIcone = this.scene.add.circle(x, yIcone, 42, 0xffffff, 1).setDepth(20); // #ffffff
             bgIcone.setInteractive({ useHandCursor: true });
 
             let tamanhoIcone = 60; 

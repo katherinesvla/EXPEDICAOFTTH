@@ -8,7 +8,7 @@ export class CenaTutorial extends Phaser.Scene {
 
     create() {
         document.body.style.backgroundImage = "none";
-        document.body.style.backgroundColor = "#0E2238";
+        document.body.style.backgroundColor = "#2B5A84";
     
         window.history.pushState({ cena: this.scene.key }, '');
         this.eventoVoltarNavegador = () => {
@@ -28,21 +28,24 @@ export class CenaTutorial extends Phaser.Scene {
         // BARRA SUPERIOR
         const barra = this.add.graphics();
         barra.fillStyle(0x7CB6E6, 0.12); // #7CB6E6
-        barra.fillRoundedRect(55, 30, 1170, 50, 25);
+        barra.fillRoundedRect(55, 30, 160, 50, 25);
         barra.lineStyle(2, 0xffffff, 0.06);
-        barra.strokeRoundedRect(55, 30, 1170, 50, 25);
+        barra.strokeRoundedRect(55, 30, 160, 50, 25);    
 
-        // TÍTULO NA BARRA
-        this.add.text(640, 55, 'TUTORIAL', {
+        // BOTAO VOLTAR 
+        const voltarArea = this.add.rectangle(155, //X
+            58, //Y
+            200, 40, //Tamanho
+            0xffffff, 0);
+        voltarArea.setDepth(30); // Profundidade
+        voltarArea.setInteractive({ useHandCursor: true });
+
+        const textoVoltar = this.add.text(135, 56, 'VOLTAR', {
             fontFamily: fonte,
-            fontSize: '20px',
+            fontSize: '18px',
             color: '#FFFFFF',
             fontStyle: '700'
-        }).setOrigin(0.5);
-
-        // VOLTAR
-        const voltarArea = this.add.rectangle(135, 56, 140, 36, 0xffffff, 0);
-        voltarArea.setInteractive({ useHandCursor: true }).setDepth(10);
+        }).setOrigin(0.5).setDepth(10);
 
         const textoVoltar = this.add.text(135, 56, 'VOLTAR', {
             fontFamily: fonte,
@@ -68,22 +71,8 @@ export class CenaTutorial extends Phaser.Scene {
             this.time.delayedCall(100, () => {
                 this.scene.start('CenaMenu');
             });
-        });
-
-        // CARD DE CONTEÚDO
-        const card = this.add.graphics();
-        card.fillStyle(0x7CB6E6, 0.07); // #7CB6E6 
-        card.fillRoundedRect(140, 100, 1000, 600, 20);
-        card.lineStyle(1, 0xffffff, 0.08);
-        card.strokeRoundedRect(140, 100, 1000, 600, 20); 
-
-        // MOLDURA VISUAL DO VÍDEO 
-        const moldura = this.add.graphics();
-        moldura.fillStyle(0x040d1617, 1); // #040d1617
-        moldura.fillRoundedRect(295, 135, 690, 388, 14);
-        moldura.lineStyle(2, 0x040d1617, 1); // #22598D
-        moldura.strokeRoundedRect(295, 135, 690, 388, 14);
-
+        });  
+      
         // TEXTO ABAIXO DO VÍDEO
         const texto = [
             'Preparamos um vídeo especial no qual nós, os desenvolvedores,',
@@ -94,14 +83,14 @@ export class CenaTutorial extends Phaser.Scene {
         ].join('\n');
 
         this.add.text(640 // X 
-                    , 599 //Y
-                    , texto, { 
-                    fontFamily: fonte,
-                    fontSize: '17px',
-                    color: '#D8EEFF',
-                    align: 'center',
-                    lineSpacing: 8,
-                    wordWrap: { width: 800 }
+        , 599 //Y
+        , texto, { 
+        fontFamily: fonte,
+        fontSize: '18px',     
+        color: '#FFFFFF',     
+        align: 'center',
+        lineSpacing: 8,
+        wordWrap: { width: 800 }
         }).setOrigin(0.5).setResolution(DPR);
 
         // IFRAME DO YOUTUBE

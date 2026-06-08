@@ -13,7 +13,10 @@ export class CenaAssets extends Phaser.Scene {
         this.load.image('som', 'assets/som.png'); // ícone de som
         this.load.audio('musica', 'assets/musica.mp3'); // música de fundo
         this.load.audio('clique', 'assets/clique.mp3'); // som de clique dos botões
-
+        
+        // SOBRE
+        this.load.image('pinguimSobre','assets/pinguimsobre.png');
+        this.load.image('pinguimHistoria','assets/pinguimhistoria.png');
         // JOGO
         this.load.image('poste', 'assets/poste.png'); // poste
         this.load.image('ceo', 'assets/ceo.png'); // ceo
@@ -39,6 +42,8 @@ export class CenaAssets extends Phaser.Scene {
         // Imagens PNG do Tiled
         this.load.image('imagem-base', 'assets/256_base.png');
         this.load.image('imagem-decor', 'assets/256_decor.png');
+
+        
     }
 
     create() {
