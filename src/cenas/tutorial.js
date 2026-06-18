@@ -117,7 +117,9 @@ export class CenaTutorial extends Phaser.Scene {
         ;
 
         const iframe = document.createElement('iframe');
-        iframe.src = 'https://www.youtube.com/embed/2DKzTCIrw9k?rel=0&modestbranding=1';
+    
+        iframe.src = 'https://www.youtube.com/embed/exlk-2FxSk8?rel=0&modestbranding=1';
+        
         iframe.style.cssText = 'width:100%;height:100%;border:none;';
         iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
         iframe.allowFullscreen = true;
