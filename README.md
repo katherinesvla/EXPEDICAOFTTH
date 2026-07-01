@@ -90,14 +90,15 @@ Você pode baixar o Node.js em:
 https://nodejs.org
 
 ---
+## 1. Abra seu Git Bash
 
-## 1. Clonar o repositório
+## 2. Clonar o repositório
 
 ```bash
 git clone https://github.com/katherinesvla/EXPEDICAOFTTH.git
 ```
 
-## 2. Acessar a pasta do projeto no terminal
+## 3. Acessar a pasta do projeto no terminal
 
 Substitua o nome abaixo pelo nome da pasta onde o projeto foi salvo.
 
@@ -105,19 +106,19 @@ Substitua o nome abaixo pelo nome da pasta onde o projeto foi salvo.
 cd EXPEDICAOFTTH
 ```
 
-## 3. Instalar as dependências
+## 4. Instalar as dependências
 
 ```bash
 npm install
 ```
 
-## 4. Executar o projeto
+## 5. Executar o projeto
 
 ```bash
 npm run dev
 ```
 
-## 5. Abrir no navegador
+## 6. Abrir no navegador
 
 Após iniciar o servidor, acesse:
 
