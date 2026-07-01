@@ -102,7 +102,7 @@ git clone https://github.com/katherinesvla/EXPEDICAOFTTH.git
 Substitua o nome abaixo pelo nome da pasta onde o projeto foi salvo.
 
 ```bash
-cd expedicao-ftth
+cd EXPEDICAOFTTH
 ```
 
 ## 3. Instalar as dependências
