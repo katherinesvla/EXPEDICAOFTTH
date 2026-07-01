@@ -94,7 +94,7 @@ https://nodejs.org
 ## 1. Clonar o repositório
 
 ```bash
-git clone https://github.com/seu-usuario/expedicao-ftth.git
+git clone https://github.com/katherinesvla/expedicao-ftth.git
 ```
 
 ## 2. Acessar a pasta do projeto no terminal
@@ -102,7 +102,7 @@ git clone https://github.com/seu-usuario/expedicao-ftth.git
 Substitua o nome abaixo pelo nome da pasta onde o projeto foi salvo.
 
 ```bash
-cd nome-da-pasta
+cd expedicao-ftth
 ```
 
 ## 3. Instalar as dependências
