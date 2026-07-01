@@ -94,7 +94,7 @@ https://nodejs.org
 ## 1. Clonar o repositório
 
 ```bash
-git clone https://github.com/katherinesvla/expedicao-ftth.git
+git clone https://github.com/katherinesvla/EXPEDICAOFTTH.git
 ```
 
 ## 2. Acessar a pasta do projeto no terminal
