@@ -100,8 +100,6 @@ git clone https://github.com/katherinesvla/EXPEDICAOFTTH.git
 
 ## 3. Acessar a pasta do projeto no terminal
 
-Substitua o nome abaixo pelo nome da pasta onde o projeto foi salvo.
-
 ```bash
 cd EXPEDICAOFTTH
 ```
