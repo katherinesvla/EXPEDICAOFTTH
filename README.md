@@ -149,6 +149,7 @@ A proposta surgiu da necessidade de criar uma ferramenta capaz de auxiliar o ens
 # Desenvolvedoras
 
 **[Katherine Maria Carvalho da Silva](https://github.com/katherinesvla)**
+
 **[Letícia Rodrigues de Sousa](https://github.com/Leticia1212)**
 
 ---
