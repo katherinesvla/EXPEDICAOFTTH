@@ -148,8 +148,8 @@ A proposta surgiu da necessidade de criar uma ferramenta capaz de auxiliar o ens
 
 # Desenvolvedoras
 
-- **Katherine Maria Carvalho da Silva**
-- **Letícia Rodrigues de Sousa**
+- **[Katherine Maria Carvalho da Silva](#)**
+- **[Letícia Rodrigues de Sousa](#)**
 
 ---
 
