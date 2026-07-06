@@ -1,6 +1,6 @@
 # 🐧 Expedição FTTH 
 
-## 🎮 Um Jogo Educativo para o Ensino Prático da Topologia e Montagem de Redes FTTH (*Fiber to the Home*)
+## Um Jogo Educativo para o Ensino Prático da Topologia e Montagem de Redes FTTH (*Fiber to the Home*)
 
 O **Expedição FTTH** é um jogo educativo desenvolvido como **Trabalho de Conclusão de Curso (TCC)** do curso de **Bacharelado em Ciência da Computação** da **Universidade Estadual do Piauí (UESPI)**.
 
@@ -10,7 +10,7 @@ Mais do que um jogo, o **Expedição FTTH** busca transformar conceitos técnico
 
 ---
 
-# 📖 Sobre o Projeto
+# Sobre o Projeto
 
 As redes **FTTH (*Fiber To The Home*)** utilizam cabos de fibra óptica para levar a internet diretamente até a residência do cliente final, proporcionando maior velocidade, estabilidade e qualidade de conexão.
 
@@ -27,7 +27,7 @@ A proposta utiliza conceitos de **gamificação** para tornar o processo de apre
 
 ---
 
-# 🎯 Objetivos
+# Objetivos
 
 - Auxiliar no ensino de **redes FTTH**;
 - Apresentar os principais componentes da **infraestrutura óptica**;
@@ -38,7 +38,7 @@ A proposta utiliza conceitos de **gamificação** para tornar o processo de apre
 
 ---
 
-# ✨ Funcionalidades
+# Funcionalidades
 
 - Inserção de **CTO** ou **CEO**;
 - Inserção de **Postes**;
@@ -53,7 +53,7 @@ A proposta utiliza conceitos de **gamificação** para tornar o processo de apre
 
 ---
 
-# 🛠️ Tecnologias e Ferramentas Utilizadas
+# Tecnologias e Ferramentas Utilizadas
 
 A arquitetura do projeto foi construída utilizando tecnologias *Web* para o desenvolvimento de um jogo educativo interativo.
 
@@ -76,7 +76,7 @@ A arquitetura do projeto foi construída utilizando tecnologias *Web* para o des
 
 ---
 
-# 🚀 Como Executar o Projeto
+# Como Executar o Projeto
 
 ## Pré-requisitos
 
@@ -138,7 +138,7 @@ http://localhost:5173
 
 ---
 
-# 🎓 Contexto Acadêmico
+# Contexto Acadêmico
 
 Este projeto foi desenvolvido como parte do **Trabalho de Conclusão de Curso (TCC)** do curso de **Ciência da Computação** da **Universidade Estadual do Piauí (UESPI)**.
 
@@ -146,14 +146,14 @@ A proposta surgiu da necessidade de criar uma ferramenta capaz de auxiliar o ens
 
 ---
 
-# 👩‍💻 Desenvolvedoras
+# Desenvolvedoras
 
 - **Katherine Maria Carvalho da Silva**
 - **Letícia Rodrigues de Sousa**
 
 ---
 
-# 🎓 Instituição
+# Instituição
 
 **Universidade Estadual do Piauí (UESPI)**
 
